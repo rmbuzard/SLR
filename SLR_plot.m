@@ -22,13 +22,7 @@ idx = find(ha==min(ha));                 % closest solution
 % format data into plottable matrix
 x = [2005 2020:10:2150];        % dates
 x2 = [x, fliplr(x)];            % for area plot
-s03 = 1:3;                      % scenario index
-s05 = 4:6;
-s10 = 7:9;
-s15 = 10:12;
-s20 = 13:15;
 
-s = [s03;s05;s10;s15;s20];
 itemNames ={...
     'S1: GMSL 0.3 m by 2100',...
     'S2: GMSL 0.5 m by 2100',...
@@ -57,29 +51,10 @@ ax.YAxisLocation = 'right';
 ax.YGrid = 'on';
 ax.Box = 'on';
 fig.Color=[1 1 1];
-
-% ss=2;
-% s = (ss*3-2):ss*3;
-% fill(ax,x2,[m(idx(s(2)),14:28),...
-%     fliplr(m(idx(s(3)),14:28))],...
-%     lineColors(ss,:),'EdgeColor','none','FaceAlpha',0.3);
-% hold(ax,'on')
-% plot(ax,x,m(idx(s(1)),14:28),'-','Color',lineColors(ss,:));
-
-
 ax.XAxis.TickValues = 2000:10:2150;
 ax.XTickLabel = {2000,'','','','',2050,'','','','',2100,'','','','',2150};
 ax.XAxis.TickLabelRotation = 0;
-%title(ax,itemNames(ss))
 ylabel(ax,'Sea Level Rise (cm)','rotation',90)
-
-%legend(ax,itemNames,'Location','northwest')
-
-% dd = uidropdown(fig,...
-%     'Items',itemNames,...
-%     'Value', itemNames{1},...
-%     'Position',[20 310 120 22],...
-%     'ValueChangedFcn',@(dd,event) selection(dd,m,x,x2,idx,itemNames,ax));
 
 cbx1.Value = 0;
 cbx2.Value = 0;
@@ -117,7 +92,6 @@ end
 function selection(cbx1,cbx2,cbx3,cbx4,cbx5,m,x,x2,idx,lineColors,ax)
     cla(ax);
     p=[];
-    lg = {'','','','','',''};
     cbx = [cbx1.Value, cbx2.Value, cbx3.Value, cbx4.Value, cbx5.Value];
     itemNames ={...
     'GMSL 0.3 m by 2100',...
