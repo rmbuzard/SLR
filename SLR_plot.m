@@ -4,7 +4,7 @@
 % May 25, 2022
 
 %% LOAD DATA
-
+clear all; close all; clc
 mt = readtable('SLR_TF US Sea Level Projections.csv','Range',[18 1]); % table has text
 m = readmatrix('SLR_TF US Sea Level Projections.csv','Range',[19 1]); % matrix is easier to plot
 %% CHOOSE LOCATION
