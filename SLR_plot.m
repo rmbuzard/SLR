@@ -56,7 +56,7 @@ ax = uiaxes('Parent',fig,...
 ax.YAxisLocation = 'right';
 ax.YGrid = 'on';
 ax.Box = 'on';
-
+fig.Color=[1 1 1];
 
 % ss=2;
 % s = (ss*3-2):ss*3;
